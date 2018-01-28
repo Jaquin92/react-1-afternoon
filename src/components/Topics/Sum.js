@@ -16,10 +16,16 @@ export default class Sum extends Component {
   subtract(num1, num2) {
     this.setState({ output: num1 - num2 });
   }
+  multiply(num1, num2) {
+    this.setState({ output: num1 * num2 });
+  }
+  divide(num1, num2) {
+    this.setState({ output: num1 / num2 });
+  }
   render() {
     return (
       <div className="puzzleBox filterObjectPB">
-        <h4>Add or Subtract</h4>
+        <h4>Math</h4>
         <input
           className="inputLine pS"
           type="text"
@@ -31,18 +37,31 @@ export default class Sum extends Component {
           type="text"
           onChange={e => this.setState({ num2: e.target.value })}
         />
+
         <button
           className="confirmationButton"
           onClick={e => this.add(this.state.num1, this.state.num2)}
         >
           Add
         </button>
-        <p>or</p>
+
         <button
           className="confirmationButton"
           onClick={e => this.subtract(this.state.num1, this.state.num2)}
         >
           Subtract
+        </button>
+        <button
+          className="confirmationButton"
+          onClick={e => this.multiply(this.state.num1, this.state.num2)}
+        >
+          Multiply
+        </button>
+        <button
+          className="confirmationButton"
+          onClick={e => this.divide(this.state.num1, this.state.num2)}
+        >
+          Divide
         </button>
         <span className="resultsBox pS">{Number(this.state.output)}</span>
       </div>

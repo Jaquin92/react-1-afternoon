@@ -95,7 +95,7 @@ body {
   height: 36px;
   border-radius: 2px;
   background-color: #f74f4f;
-  border: none;
+  border: solid black 2px;
   font-family: Roboto;
   font-size: 14px;
   font-weight: 500;
